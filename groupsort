@@ -1,0 +1,24 @@
+import random
+students = [ "Cole", "May", "James", "Brian", "John", "Chandler", "Pearson", "David", "Dwayne", "Chris", "Aiden", "Gavin", "Jaiden", "Leo", "Ryan", "Adam", "Devin", "Shannon", "Addie", "Sean" ]
+def pairs():
+    group_1 = []
+    group_2 = []
+    group_3 = []
+    group_4 = []
+    group_5 = []
+    group_6 = []
+    group_7 = []
+    group_8 = []
+    group_9 = []
+    group_10 = []
+    random.shuffle(students)
+
+    for x in range(len(student)):
+        if (x < 2):
+            students = rooster.pop(0)
+            group_1.insert(0, students)
+            print("group 1 ", group_1)
+        elif(x >= 2) and (x < 4):
+            students = rooster.pop(0)
+            group_2.insert(0, students)
+            print("group 2", group_2)
