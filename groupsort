@@ -1,6 +1,7 @@
 import random
-students = [ "Cole", "May", "James", "Brian", "John", "Chandler", "Pearson", "David", "Dwayne", "Chris", "Aiden", "Gavin", "Jaiden", "Leo", "Ryan", "Adam", "Devin", "Shannon", "Addie", "Sean" ]
-def pairs():
+from tkinter.messagebox import YES
+thekids = [ "Cole", "May", "James", "Brian", "John", "Chandler", "Pearson", "David", "Dwayne", "Chris", "Aiden", "Gavin", "Jaiden", "Leo", "Ryan", "Adam", "Devin", "Shannon", "Addie", "Mason" ] #the kids
+def pairs(): #define the amount of pairs
     group_1 = []
     group_2 = []
     group_3 = []
@@ -11,14 +12,129 @@ def pairs():
     group_8 = []
     group_9 = []
     group_10 = []
-    random.shuffle(students)
+    random.shuffle(thekids)
 
-    for x in range(len(student)):
+    for x in range(len(thekids)): #sort the kids into pairs
         if (x < 2):
-            students = rooster.pop(0)
+            students = thekids.pop(0)
             group_1.insert(0, students)
-            print("group 1 ", group_1)
         elif(x >= 2) and (x < 4):
-            students = rooster.pop(0)
+            students = thekids.pop(0)
             group_2.insert(0, students)
-            print("group 2", group_2)
+        elif(x >= 4) and (x < 6):
+            students = thekids.pop(0)
+            group_3.insert(0, students)
+        elif(x >= 6) and (x <8):
+            students = thekids.pop(0)
+            group_4.insert(0, students)
+        elif(x >= 8) and (x < 10):
+            students = thekids.pop(0)
+            group_5.insert(0, students)
+        elif(x >= 10) and (x < 12):
+            students = thekids.pop(0)
+            group_6.insert(0, students)
+        elif(x >= 12) and (x < 14):
+            students = thekids.pop(0)
+            group_7.insert(0, students)
+        elif(x >= 14) and (x < 16):
+            students = thekids.pop(0)
+            group_8.insert(0, students)
+        elif(x >= 16) and (x < 18):
+            students = thekids.pop(0)
+            group_9.insert(0, students)
+        elif(x >= 18) and (x < 20):
+            students = thekids.pop(0)
+            group_10.insert(0, students)
+    print('Group 1',group_1, '\n' 'Group 2',group_2, '\n' 'Group 3',group_3, '\n' 'Group 4',group_4, '\n' 'Group 5',group_5, '\n' 'Group 6',group_6, '\n' 'Group 7',group_7, '\n' 'Group 8',group_8, '\n' 'Group 9',group_9, '\n' 'Group 10',group_10) #prints the groups
+
+def trios(): #define how many trios
+    group_1 = []
+    group_2 = []
+    group_3 = []
+    group_4 = []
+    group_5 = []
+    group_6 = []
+    random.shuffle(thekids)
+
+    for x in range(len(thekids)): #sort the kids into trios
+        if(x < 4):
+            students = thekids.pop(0)
+            group_1.insert(0, students)
+        elif(x >= 4) and (x < 8):
+            students = thekids.pop(0)
+            group_2.insert(0, students)
+        elif(x >= 7) and (x < 11):
+            students = thekids.pop(0)
+            group_3.insert(0, students)
+        elif(x >= 10) and (x < 14):
+            students = thekids.pop(0)
+            group_4.insert(0, students)
+        elif(x >= 13) and (x < 17):
+            students = thekids.pop(0)
+            group_5.insert(0, students)
+        elif(x >= 16) and (x < 20):
+            students = thekids.pop(0)
+            group_6.insert(0, students)
+    print('Group 1',group_1, '\n' 'Group 2',group_2, '\n' 'Group 3',group_3, '\n' 'Group 4',group_4, '\n' 'Group 5',group_5, '\n' 'Group 6',group_6) #prints the groups
+
+def quads(): #define the amount of 4 groups
+    group_1 = []
+    group_2 = []
+    group_3 = []
+    group_4 =[]
+    group_5 = []
+    random.shuffle(thekids)
+
+    for x in range(len(thekids)): #sort the kids into quads
+        if(x < 4):
+            students = thekids.pop(0)
+            group_1.insert(0, students)
+        elif(x >= 4) and (x < 8):
+            students = thekids.pop(0)
+            group_2.insert(0, students)
+        elif(x >= 8) and (x < 12):
+            students = thekids.pop(0)
+            group_3.insert(0, students)
+        elif(x >= 12) and (x < 16):
+            students = thekids.pop(0)
+            group_4.insert(0, students)
+        elif(x >= 16) and (x < 20):
+            students = thekids.pop(0)
+            group_5.insert(0, students)
+    print('Group 1',group_1, '\n' 'Group 2',group_2, '\n' 'Group 3',group_3, '\n' 'Group 4',group_4, '\n' 'Group 5',group_5) #prints the groups
+
+def main(): #intro code, talks to user
+    Groups = False
+    while(Groups == False):
+        print("Hello there! Pick which sized group you need! You can split into groups of 2, 3, or 4. If kids need to be separated, press 5")
+        print("1. Split into pairs")
+        print("2. split into trios")
+        print("3. Split into quads")
+        print("5. Separate kids")
+        choice = int(input())
+        if(choice == 1):
+            pairs()
+            quit()
+            Groups == True
+        if(choice == 2):
+            trios()
+            quit()
+            Groups = True
+        if(choice == 3):
+            quads()
+            quit()
+            Groups = True
+        if(choice == 5):
+            exclude()
+
+def exclude():
+    Kidtaker = 1
+    Space = 0
+    Space = int(Space)
+    Takeaway = True
+    while(Takeaway == True):
+        print("What student needs to be separated?", Kidtaker)
+        Kidname = str(input())
+        thekids.index(Kidname)
+        Exclude1 = thekids.pop(thekids.index(Kidname))
+        thekids.insert(Space, Exclude1)
