@@ -139,7 +139,7 @@ def exclude(): #Exclude program
         Exclude1 = thekids.pop(thekids.index(Kidname))
         thekids.insert(Space, Exclude1)
         Kidtaker = Kidtaker + 1
-        Space = Space + 4
+        Space = Space + 5
         print("Does another kid need to be separated?")
         print("1. Yes")
         print("2. Nope")
