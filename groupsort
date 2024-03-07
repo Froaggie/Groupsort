@@ -1,5 +1,5 @@
 import random
-from tkinter.messagebox import YES
+
 thekids = [ "Cole", "May", "James", "Brian", "John", "Chandler", "Pearson", "David", "Dwayne", "Chris", "Aiden", "Gavin", "Jaiden", "Leo", "Ryan", "Adam", "Devin", "Shannon", "Addie", "Mason" ] #the kids
 def pairs(): #define the amount of pairs
     group_1 = []
@@ -127,14 +127,25 @@ def main(): #intro code, talks to user
         if(choice == 5):
             exclude()
 
-def exclude():
+def exclude(): #Exclude program
     Kidtaker = 1
     Space = 0
     Space = int(Space)
     Takeaway = True
     while(Takeaway == True):
-        print("What student needs to be separated?", Kidtaker)
+        print("What student needs to be separated?") #Separate the kids
         Kidname = str(input())
         thekids.index(Kidname)
         Exclude1 = thekids.pop(thekids.index(Kidname))
         thekids.insert(Space, Exclude1)
+        Kidtaker = Kidtaker + 1
+        Space = Space + 4
+        print("Does another kid need to be separated?")
+        print("1. Yes")
+        print("2. Nope")
+        Answer = int(input())
+        if(Answer == 1):
+            Takeaway == True
+        if(Answer == 2):
+            Takeaway = False
+main()
